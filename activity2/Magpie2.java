@@ -1,5 +1,6 @@
 package activity2;
-
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 /**
  * A program to carry on conversations with a human user.
  * This is the initial version that:  
@@ -14,6 +15,9 @@ package activity2;
  */
 public class Magpie2
 {
+    LocalDate dateObj = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    String date = dateObj.format(formatter);
     /**
      * Get a default greeting     
      * @return a greeting
@@ -33,8 +37,8 @@ public class Magpie2
     public String getResponse(String statement)
     {
         String response = "";
-        String str = new String();
-        //str = str.trim();
+        String str = new String(statement);
+        
         if (str.length() < 1) {
             response = "I didn't get that";
         }
@@ -60,6 +64,16 @@ public class Magpie2
         }
         else if (statement.indexOf("hello") >=0) {
             response = "Hello there! How are you doing?";
+        }
+        else if (statement.indexOf("Whats your name?") >=0
+            || statement.indexOf("What's your name?")>=0) {
+            response = "I am Magpie. What's your name?";
+        }
+        else if (statement.indexOf("How is your day?") >=0){
+            response = "My day is going great! What about yours?";
+        }
+        else if (statement.indexOf("What's todays date?") >=0) {
+            response = "Today is " +date;
         }
         else
         {
