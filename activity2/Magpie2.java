@@ -33,7 +33,11 @@ public class Magpie2
     public String getResponse(String statement)
     {
         String response = "";
-        String trim = statement.trim();
+        String str = new String();
+        //str = str.trim();
+        if (str.length() < 1) {
+            response = "I didn't get that";
+        }
         if (statement.indexOf("no") >= 0)
         {
             response = "Why so negative?";
@@ -53,6 +57,9 @@ public class Magpie2
         else if (statement.indexOf("Jaffe") >= 0)
         {
             response = "Mr.Jaffe sounds like an excellent teacher!";
+        }
+        else if (statement.indexOf("hello") >=0) {
+            response = "Hello there! How are you doing?";
         }
         else
         {
