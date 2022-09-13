@@ -72,7 +72,7 @@ public class Magpie2
         else if (statement.indexOf("How is your day?") >=0){
             response = "My day is going great! What about yours?";
         }
-        else if (statement.indexOf("What's todays date?") >=0) {
+        else if (statement.indexOf("What's today's date?") >=0) {
             response = "Today is " +date;
         }
         else
