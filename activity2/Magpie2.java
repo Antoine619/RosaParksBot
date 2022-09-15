@@ -39,10 +39,10 @@ public class Magpie2
         String response = "";
         String str = new String(statement);
         
-        if (str.length() < 1) {
+        if (statement.length() == 0) {
             response = "I didn't get that";
         }
-        if (statement.indexOf("no") >= 0)
+        else if (statement.indexOf("no") >= 0)
         {
             response = "Why so negative?";
         }
