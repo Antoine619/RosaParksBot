@@ -37,8 +37,7 @@ public class Magpie2
     public String getResponse(String statement)
     {
         String response = "";
-        String str = new String(statement);
-        
+        String str = statement.trim();
         if (statement.length() == 0) {
             response = "I didn't get that";
         }
