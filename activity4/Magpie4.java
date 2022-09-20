@@ -94,7 +94,8 @@ public class Magpie4
         }
         int psn = findKeyword (statement, "I want to", 0);
         String restOfStatement = statement.substring(psn + 9).trim();
-        return "What would it mean to " + restOfStatement + "?";
+        //return "What would it mean to " + restOfStatement + "?";
+        return "Would you really be happy if you had " + restOfStatement + "?";
     }
 
     
@@ -118,6 +119,7 @@ public class Magpie4
         }
         
         int psnOfYou = findKeyword (statement, "you", 0);
+        int psnOfI = findKeyword (statement, "I", psnOfYou + 2);
         int psnOfMe = findKeyword (statement, "me", psnOfYou + 3);
         
         String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
