@@ -62,7 +62,15 @@ public class Magpie5
         {
             response = transformIWantStatement(statement);
         }
-
+        else if (findKeyword(statement, "What's your name?", 0) >= 0){
+            response = "My name is Rosa Louise McCauley Parks.";
+        }
+        else if (findKeyword(statement, "What are you famous for?",0) >= 0){
+            response = "I am known as the reason for the Montgomory bus boycott.";
+        }
+        else if (findKeyword(statement, "Are you married?", 0 ) >=0){
+            response = "Yes I am, my spouse's name is ____";
+        }
         else
         {
 
@@ -190,6 +198,8 @@ public class Magpie5
         String restOfStatement = statement.substring(psnOfI + 1, psnOfYou).trim();
         return "Why do you " + restOfStatement + " me?";
     }
+    
+    
     
 
     
